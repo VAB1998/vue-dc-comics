@@ -30,13 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../style/variables.scss";
-
-//Reset
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+@import "../style/style.css";
 
 header{
     //Style
