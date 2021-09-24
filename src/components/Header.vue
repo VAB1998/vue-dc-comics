@@ -34,10 +34,7 @@ export default {
 
 header{
     //Style
-    background-color: $secondaryColor;
-    font-family: $headerFont;
-    //Spacing and Sizing
-    padding-top: 110px;
+    font-family: $primaryFont;
 
     #nav_bar{
         background-color: #ffffff;
