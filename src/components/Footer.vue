@@ -105,6 +105,30 @@
                 </div>
             </div>
         </div>
+        <div id="footer_bottom">
+
+                <a href="#">sign-up now!</a>
+            
+
+            <div class="social_media_buttons">
+                <h3>follow us</h3>
+                <a href="#">
+                    <img src="../assets/images/footer-facebook.png" alt="">
+                </a>
+                <a href="#">
+                    <img src="../assets/images/footer-facebook.png" alt="">
+                </a>
+                <a href="#">
+                    <img src="../assets/images/footer-facebook.png" alt="">
+                </a>
+                <a href="#">
+                    <img src="../assets/images/footer-facebook.png" alt="">
+                </a>
+                <a href="#">
+                    <img src="../assets/images/footer-facebook.png" alt="">
+                </a>
+            </div>
+        </div>
     </footer>
 </template>
 
@@ -119,21 +143,24 @@ export default {
 
 footer{
     font-family: $primaryFont;
-    //Background Images Settings
-    background-image: url(../assets/images/dc-logo-bg.png), url(../assets/images/footer-bg.jpg);
-    background-position: 70% 50%,  center;
-    background-repeat: no-repeat;
-    background-size: auto, cover;
     
     #foooter_menu{
-        display: flex;
+        //Spacing and Dimensions
         height: 100%;
-        padding: 30px 120px;
-        
+        padding: 40px 120px;
+         //Background Images Settings
+        background-image: url(../assets/images/dc-logo-bg.png), url(../assets/images/footer-bg.jpg);
+        background-position: 70% 50%,  center top;
+        background-repeat: no-repeat;
+        background-size: auto, cover;
+        //Flex Settings
+        display: flex;
+
         .column{
-            margin: 0 30px;
+            margin-right: 30px;
 
             h3{
+                //Style
                 color: #ffff;
                 text-transform: uppercase;
             }
@@ -153,6 +180,58 @@ footer{
                 }
             }
         }   
+    }
+
+    #footer_bottom{
+        //Style
+        background-color: #303030;
+        //Spacing and Dimensions
+        height: 100px;
+        padding: 0 120px;
+        //Flex Settings
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        >a{
+            //Style
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: 2px solid $primaryColor;
+            //Sizing and Dimensions
+            padding: 8px;
+            //Other Settings
+            transition: .3s ease-in-out;                    
+
+            &:hover{
+                background-color: $primaryColor;
+            }    
+        }
+        .social_media_buttons{
+            //Flex Settings
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h3{
+                //Style
+                color: $primaryColor;
+                text-transform: uppercase;
+                //Spacing and Dimensions
+                margin-right: 15px;
+            }
+            a{
+                //Spacing and Dimensions
+                margin-right: 15px;
+                //Other Settings
+                transition: .3s ease-in-out;  
+
+                &:hover{
+                    opacity: .8;
+                }
+            }
+        }
     }
 }
 </style>

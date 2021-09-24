@@ -5,7 +5,6 @@
                 <a class="logo" href="#">
                     <img src="../assets/images/dc-logo.png" alt="DC logo">
                 </a>
-            
 
                 <ul class="menu">
                     <li><a href="#">Home</a></li>
@@ -24,8 +23,7 @@
 </template>
 
 <script>
-export default {
-}
+
 </script>
 
 <style lang="scss" scoped>
@@ -35,13 +33,16 @@ export default {
 header{
     //Style
     font-family: $primaryFont;
+    padding: 0 120px;
 
     #nav_bar{
+        //Style
         background-color: #ffffff;
+        //Spacing and Dimensions
         height: 110px;
         //Flex Settings
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         
         .logo{
             align-self: center;
@@ -52,7 +53,6 @@ header{
             }
         }
 
-        
         .menu{
             //Style
             list-style-type: none;
@@ -67,13 +67,14 @@ header{
                     //Style
                     text-decoration: none;
                     font-weight: 500;
+                    color: $secondaryColor;
                     //Spacing and Sizing
                     line-height: 110px;
                     transition: .3s ease-in-out;                    
                 }
 
                 &:hover{
-                    border-bottom: 5px solid $primaryColor;
+                    border-bottom: 4px solid $primaryColor;
                     a{
                         color: $primaryColor;
                     }
