@@ -38,40 +38,58 @@ export default {
     box-sizing: border-box;
 }
 
-#nav_bar{
-    // background-color: #ffffff;
+header{
+    //Style
+    background-color: $secondaryColor;
     font-family: $headerFont;
-    background-color: blue;
-    height: 110px;
-    //Flex Settings
-    display: flex;
-    justify-content: space-evenly;
-    
-    .logo{
-        align-self: center;
+    //Spacing and Sizing
+    padding-top: 110px;
 
-        img{
-            width: 70px;
-        }
-    }
-
-    
-    .menu{
-        list-style-type: none;
-
+    #nav_bar{
+        background-color: #ffffff;
+        height: 110px;
         //Flex Settings
         display: flex;
-        li{
-            cursor: pointer;
-            
-            a{
-            text-decoration: none;
-            padding: 0 20px;
-            line-height: 110px;
+        justify-content: space-evenly;
         
+        .logo{
+            align-self: center;
+
+            img{
+                //Spacing and Sizing
+                width: 70px;
             }
-        } 
+        }
+
         
+        .menu{
+            //Style
+            list-style-type: none;
+            //Flex Settings
+            display: flex;
+
+            li{
+                margin: 0 15px;
+                transition: .3s ease-in-out;
+
+                a{
+                    //Style
+                    text-decoration: none;
+                    font-weight: 500;
+                    //Spacing and Sizing
+                    line-height: 110px;
+                    transition: .3s ease-in-out;                    
+                }
+
+                &:hover{
+                    border-bottom: 5px solid $primaryColor;
+                    a{
+                        color: $primaryColor;
+                    }
+                }
+            } 
+            
+        }
     }
 }
 </style> 
