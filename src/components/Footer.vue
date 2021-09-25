@@ -5,37 +5,16 @@
                 <div class="dc_comics_menu">
                     <h3>dc comics</h3>
                     <ul>
-                        <li>
-                            <a href="#">Characters</a>
-                        </li>
-                        <li>
-                            <a href="#">Characters</a>
-                        </li>
-                        <li>
-                            <a href="#">Characters</a>
-                        </li>
-                        <li>
-                            <a href="#">Characters</a>
-                        </li>
-                        <li>
-                            <a href="#">Characters</a>
-                        </li>
-                        <li>
-                            <a href="#">Characters</a>
-                        </li>
-                        <li>
-                            <a href="#">Characters</a>
+                        <li  v-for="(link, index) in dcComicslinks" :key="index">
+                            <a :href="link.href">{{link.text}}</a>
                         </li>
                     </ul>
                 </div>
                 <div class="shop_menu">
                     <h3>shop</h3>
                     <ul>
-                        <li>
-                            <a href="">Shop DC</a>    
-                        </li>
-                        <li>
-                            <a href="">Shop DC</a>    
+                        <li  v-for="(link, index) in dcshoplinks" :key="index">
+                            <a :href="link.href">{{link.text}}</a>
                         </li>
                     </ul>
                 </div>  
@@ -45,38 +24,8 @@
                 <div class="dc_menu">
                     <h3>dc</h3>
                     <ul>
-                        <li>
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms of Use</a>
+                        <li  v-for="(link, index) in dclinks" :key="index">
+                            <a :href="link.href">{{link.text}}</a>
                         </li>
                     </ul>
                 </div>
@@ -86,20 +35,8 @@
                 <div class="sites_menu">
                     <h3>sites</h3>
                     <ul>
-                        <li>
-                            <a href="#">DC</a>
-                        </li>
-                        <li>
-                            <a href="#">DC</a>
-                        </li>
-                        <li>
-                            <a href="#">DC</a>
-                        </li>
-                        <li>
-                            <a href="#">DC</a>
-                        </li>
-                        <li>
-                            <a href="#">DC</a>
+                        <li  v-for="(link, index) in siteslinks" :key="index">
+                            <a :href="link.href">{{link.text}}</a>
                         </li>
                     </ul>
                 </div>
@@ -107,24 +44,12 @@
         </div>
         <div id="footer_bottom">
 
-                <a href="#">sign-up now!</a>
+            <a :href="signuplink.href">{{signuplink.text}}</a>
             
-
             <div class="social_media_buttons">
                 <h3>follow us</h3>
-                <a href="#">
-                    <img src="../assets/images/footer-facebook.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="../assets/images/footer-facebook.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="../assets/images/footer-facebook.png" alt="">
-                </a>
-                <a href="#">
-                    <img src="../assets/images/footer-facebook.png" alt="">
-                </a>
-                <a href="#">
+                <a v-for="(social, index) in socials" :key="index" :href="social.href">
+                    <img :src="imagePathCreator(social)" :alt="social.name">
                     <img src="../assets/images/footer-facebook.png" alt="">
                 </a>
             </div>
@@ -133,7 +58,158 @@
 </template>
 
 <script>
-export default {
+export default{
+    name: 'Header',
+    data: function(){
+        return{
+            dcComicslinks: [
+                {
+                    text: 'Characters',
+                    href: '#characters',
+                },
+                {
+                    text: 'Comics',
+                    href: '#comics',
+                },
+                {
+                    text: 'Movies',
+                    href: '#movies',
+                },
+                {
+                    text: 'TV',
+                    href: '#tv',
+                },
+                {
+                    text: 'Games',
+                    href: '#games',
+                },
+                {
+                    text: 'Videos',
+                    href: '#videos',
+                },
+                {
+                    text: 'News',
+                    href: '#news',
+                }
+            ],
+
+            dcshoplinks: [
+                {
+                    text: 'Shop DC',
+                    href: '#shopdc',
+                },
+                {
+                    text: 'Shop DC Collectibles',
+                    href: '#shopdccollectibles',
+                }
+            ],
+
+            dclinks: [
+                {
+                    text: 'Terms of use',
+                    href: '#privacypolicy',
+                },
+                {
+                    text: 'Ad Choices',
+                    href: '#adchoices',
+                },
+                {
+                    text: 'Advertising',
+                    href: '#advertising',
+                },
+                {
+                    text: 'Jobs',
+                    href: '#jobs',
+                },
+                {
+                    text: 'Substritions',
+                    href: '#subscritions',
+                },
+                {
+                    text: 'Talent Workshops',
+                    href: '#talentworkshops',
+                },
+                {
+                    text: 'CPSC Cerificates',
+                    href: '#cpsccertificates',
+                },
+                {
+                    text: 'Ratings',
+                    href: '#ratings',
+                },
+                {
+                    text: 'Shop Help',
+                    href: '#shophelp',
+                },
+                {
+                    text: 'Contact Us',
+                    href: '#contactus',
+                }
+            ],
+
+            siteslinks: [
+                {
+                    text: 'DC',
+                    href: '#dc',
+                },
+                {
+                    text: 'MAD Magazine',
+                    href: '#madmagazine',
+                },
+                {
+                    text: 'DC Kids',
+                    href: '#dckids',
+                },
+                {
+                    text: 'DC Universe',
+                    href: '#dcuniverse',
+                },
+                {
+                    text: 'DC Power Visa',
+                    href: '#dcpowervisa',
+                }
+            ],
+
+            signuplink: {
+                text: 'sign-up now!',
+                href: '#signup',
+            },
+
+            socials: [
+                {
+                    name: 'facebook',
+                    href: '#facebook'
+                },
+                {
+                    name: 'twitter',
+                    href: '#twitter'
+                },
+                {
+                    name: 'youtube',
+                    href: '#youtube'
+                },
+                {
+                    name: 'pinterest',
+                    href: '#pinterest'
+                },
+                {
+                    name: 'periscope',
+                    href: '#periscope'
+                }
+            ] 
+        }          
+    },
+
+    methods: {
+            /**
+             * Create a path to the image.
+             * @param {object} object The object from where to extract the necessary info.
+             * @returns A string which represtents the path to the image.
+             */
+            imagePathCreator : function(object){
+                return  `../assets/images/footer-${object.name}.png` ;
+            }
+        }
 }
 </script>
 
