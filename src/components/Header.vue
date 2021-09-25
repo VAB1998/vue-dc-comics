@@ -7,15 +7,10 @@
                 </a>
 
                 <ul class="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Home</a></li>
+
+                    <li :class="{active : link.current}" v-for="(link, index) in links" :key="index">
+                        <a :href="link.url">{{link.text}}</a>
+                    </li>
                     
                 </ul>
         </div>
@@ -115,6 +110,7 @@ header{
         .menu{
             //Style
             list-style-type: none;
+            text-transform: uppercase;
             //Flex Settings
             display: flex;
 
