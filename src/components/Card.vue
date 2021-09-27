@@ -8,7 +8,10 @@
 <script>
 export default {
     name : 'Card',
-    props : ['series', 'imageSource']
+    props : {
+        series : String,
+        imageSource : String
+    }
 }
 </script>
 
