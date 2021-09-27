@@ -50,7 +50,6 @@
                 <h3>follow us</h3>
                 <a v-for="(social, index) in socials" :key="index" :href="social.href">
                     <img :src="social.src" :alt="social.name">
-                    <!-- <img src="../assets/images/footer-facebook.png" alt=""> -->
                 </a>
             </div>
         </div>
@@ -179,27 +178,27 @@ export default{
                 {
                     name: 'facebook',
                     href: '#facebook',
-                    src : '../assets/images/footer-facebook.png'
+                    src : require('../assets/images/footer-facebook.png')
                 },
                 {
                     name: 'twitter',
                     href: '#twitter',
-                    src : '../assets/images/footer-facebook.png'
+                    src : require('../assets/images/footer-twitter.png')
                 },
                 {
                     name: 'youtube',
                     href: '#youtube',
-                    src : '../assets/images/footer-facebook.png'
+                    src : require('../assets/images/footer-youtube.png')
                 },
                 {
                     name: 'pinterest',
                     href: '#pinterest',
-                    src : '../assets/images/footer-facebook.png'
+                    src : require('../assets/images/footer-pinterest.png')
                 },
                 {
                     name: 'periscope',
                     href: '#periscope',
-                    src : '../assets/images/footer-facebook.png'
+                    src : require('../assets/images/footer-periscope.png')
                 }
             ] 
         }          
