@@ -7,24 +7,25 @@
 
         <ul class="menu">
 
-            <li :class="{active : link.current}" v-for="(link, index) in links" :key="index">
-                <a :href="link.url">{{link.text}}</a>
-            </li> 
+            <Menulinks v-for="(link, index) in links" :key="index" 
+            :currentPage="link.current" :text="link.text" :anchorTag="link.url" />
 
         </ul>
     </div>
 </template>
 
 <script>
+import Menulinks from './NavbarLinks.vue'
 import links from '../data/navbarLinks.js'
 export default {
     name: 'Navbar',
-
+    components : {
+        Menulinks
+    },
 
     data : function (){
         return{
             links
-            
         }
     }
 }
@@ -61,33 +62,7 @@ export default {
         //Flex Settings
         display: flex;
 
-        li{
-            margin: 0 15px;
-            transition: .3s ease-in-out;
-
-            a{
-                //Style
-                text-decoration: none;
-                font-weight: 500;
-                color: $secondaryColor;
-                //Spacing and Sizing
-                line-height: 110px;
-                transition: .3s ease-in-out;                    
-            }
-
-            &:hover{
-                border-bottom: 4px solid $primaryColor;
-                a{
-                    color: $primaryColor;
-                }
-            }
-            &.active{
-                border-bottom: 4px solid $primaryColor;
-                a{
-                    color: $primaryColor;
-                }
-            }
-        } 
+        
     }
 }
 </style>
