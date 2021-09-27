@@ -27,7 +27,6 @@ export default {
 
     img {
         width: 100%;
-        height: 161px;
         object-fit: cover;
         object-position: top;
     }
