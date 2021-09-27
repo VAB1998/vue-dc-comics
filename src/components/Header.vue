@@ -1,80 +1,21 @@
 <template>
     <header>
-        <div id="nav_bar">
-
-                <a class="logo" href="#">
-                    <img src="../assets/images/dc-logo.png" alt="DC logo">
-                </a>
-
-                <ul class="menu">
-
-                    <li :class="{active : link.current}" v-for="(link, index) in links" :key="index">
-                        <a :href="link.url">{{link.text}}</a>
-                    </li>
-                    
-                </ul>
-        </div>
+        <Navbar />
     </header>
 </template>
 
 <script>
+import Navbar from './Navbar.vue'
+
 export default{
     name: 'Header',
+    components : {
+        Navbar
+    },
+
     data: function(){
         return{
-
-            links: [
-                {
-                    text: 'characters',
-                    url: '#characters',
-                    current: false
-                },
-                {
-                    text: 'comics',
-                    url: '#comics',
-                    current: true
-                },
-                {
-                    text: 'movies',
-                    url: '#movies',
-                    current: false
-                },
-                {
-                    text: 'tv',
-                    url: '#tv',
-                    current: false
-                },
-                {
-                    text: 'games',
-                    url: '#games',
-                    current: false
-                },
-                {
-                    text: 'collectibles',
-                    url: '#collectibles',
-                    current: false
-                },
-                {
-                    text: 'videos',
-                    url: '#videos',
-                    current: false
-                },
-                {
-                    text: 'fans',
-                    url: '#fans',
-                    current: false
-                },
-                {
-                    text: 'news',
-                    url: '#news',
-                    current: false
-                },
-                {
-                    text: 'shop',
-                    url: '#shop',
-                    current: false
-                },
-            ]
+            
         }
     }
 }
@@ -89,59 +30,5 @@ header{
     font-family: $primaryFont;
     padding: 0 120px;
 
-    #nav_bar{
-        //Style
-        background-color: #ffffff;
-        //Spacing and Dimensions
-        height: 110px;
-        //Flex Settings
-        display: flex;
-        justify-content: space-between;
-        
-        .logo{
-            align-self: center;
-
-            img{
-                //Spacing and Sizing
-                width: 70px;
-            }
-        }
-
-        .menu{
-            //Style
-            list-style-type: none;
-            text-transform: uppercase;
-            //Flex Settings
-            display: flex;
-
-            li{
-                margin: 0 15px;
-                transition: .3s ease-in-out;
-
-                a{
-                    //Style
-                    text-decoration: none;
-                    font-weight: 500;
-                    color: $secondaryColor;
-                    //Spacing and Sizing
-                    line-height: 110px;
-                    transition: .3s ease-in-out;                    
-                }
-
-                &:hover{
-                    border-bottom: 4px solid $primaryColor;
-                    a{
-                        color: $primaryColor;
-                    }
-                }
-                &.active{
-                    border-bottom: 4px solid $primaryColor;
-                    a{
-                        color: $primaryColor;
-                    }
-                }
-            } 
-        }
-    }
 }
 </style> 
