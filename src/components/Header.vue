@@ -82,7 +82,7 @@ export default{
 
 <style lang="scss" scoped>
 @import "../style/variables.scss";
-@import "../style/style.css";
+@import "../style/general.scss";
 
 header{
     //Style

@@ -49,8 +49,8 @@
             <div class="social_media_buttons">
                 <h3>follow us</h3>
                 <a v-for="(social, index) in socials" :key="index" :href="social.href">
-                    <img :src="imagePathCreator(social)" :alt="social.name">
-                    <img src="../assets/images/footer-facebook.png" alt="">
+                    <img :src="social.src" :alt="social.name">
+                    <!-- <img src="../assets/images/footer-facebook.png" alt=""> -->
                 </a>
             </div>
         </div>
@@ -178,44 +178,38 @@ export default{
             socials: [
                 {
                     name: 'facebook',
-                    href: '#facebook'
+                    href: '#facebook',
+                    src : '../assets/images/footer-facebook.png'
                 },
                 {
                     name: 'twitter',
-                    href: '#twitter'
+                    href: '#twitter',
+                    src : '../assets/images/footer-facebook.png'
                 },
                 {
                     name: 'youtube',
-                    href: '#youtube'
+                    href: '#youtube',
+                    src : '../assets/images/footer-facebook.png'
                 },
                 {
                     name: 'pinterest',
-                    href: '#pinterest'
+                    href: '#pinterest',
+                    src : '../assets/images/footer-facebook.png'
                 },
                 {
                     name: 'periscope',
-                    href: '#periscope'
+                    href: '#periscope',
+                    src : '../assets/images/footer-facebook.png'
                 }
             ] 
         }          
-    },
-
-    methods: {
-            /**
-             * Create a path to the image.
-             * @param {object} object The object from where to extract the necessary info.
-             * @returns A string which represtents the path to the image.
-             */
-            imagePathCreator : function(object){
-                return  `../assets/images/footer-${object.name}.png` ;
-            }
-        }
+    }
 }
 </script>
 
 <style lang="scss" scoped>
 @import "../style/variables.scss";
-@import "../style/style.css";
+@import "../style/general.scss";
 
 footer{
     font-family: $primaryFont;
