@@ -39,6 +39,8 @@ export default {
     background-color: #ffffff;
     //Spacing and Dimensions
     height: 110px;
+    padding: 0 120px;
+
     //Flex Settings
     display: flex;
     justify-content: space-between;

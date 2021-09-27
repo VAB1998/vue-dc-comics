@@ -1,16 +1,18 @@
 <template>
     <header>
         <Navbar />
+        <Jumbotron />
     </header>
 </template>
 
 <script>
 import Navbar from './Navbar.vue'
-
+import Jumbotron from './Jumbotron.vue'
 export default{
     name: 'Header',
     components : {
-        Navbar
+        Navbar,
+        Jumbotron
     },
 
     data: function(){
@@ -28,7 +30,6 @@ export default{
 header{
     //Style
     font-family: $primaryFont;
-    padding: 0 120px;
 
 }
 </style> 
